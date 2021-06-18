@@ -51,7 +51,7 @@
         sprite.position.x = 0;
         sprite.position.y = 0;
         sprite.position.z = 0;
-        sprite.scale.set(100,100,100);
+        sprite.scale.set(200,200,200);
         scene.add(sprite);
 
         //打者をスプライトで作成
@@ -62,7 +62,7 @@
         sprite2.position.x = 450;
         sprite2.position.y = -170;
         sprite2.position.z = 20;
-        sprite2.scale.set(200,200,200);
+        sprite2.scale.set(300,300,300);
         scene.add(sprite2);
 
         //野球ボール作成 
@@ -72,10 +72,10 @@
 
         const geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
         const Sphere = new THREE.Mesh(geometry2, mat);
-        Sphere.position.x = 10;
-        Sphere.position.y = 10;
+        Sphere.position.x = -200;
+        Sphere.position.y = 300;
         Sphere.position.z = 10;
-        Sphere.scale.set(100,100,100);
+        Sphere.scale.set(50,50,50);
         scene.add(Sphere);
 
 
