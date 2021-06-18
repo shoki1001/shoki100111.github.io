@@ -70,9 +70,12 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
-        var geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
-        var Sphere = new THREE.Mesh(geometry2, mat);
-        Sphere.position.set(0,0,-5);
+        const geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
+        const Sphere = new THREE.Mesh(geometry2, mat);
+        Sphere.position.x = 10;
+        Sphere.position.y = 10;
+        Sphere.position.z = 10;
+        Sphere.scale.set(100,100,100);
         scene.add(Sphere);
 
 
