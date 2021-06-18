@@ -18,7 +18,7 @@
         });
         renderer.setSize(width, height);
         // 背景の色を設定
-        renderer.setClearColor(0xeeeeff);
+        renderer.setClearColor(0x66b6ff);
 
         // シーンを作成
         const scene = new THREE.Scene();
@@ -44,7 +44,7 @@
 
         // 投手をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img1/276_150.png");
+        var texture = textureLoader.load("img1/171_150.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
         const sprite = new THREE.Sprite(material);
