@@ -78,6 +78,19 @@
         Sphere.scale.set(30,30,30);
         scene.add(Sphere);
 
+        //電光掲示板作成
+        var texture3 = textureLoader.load("img1/450-2013100910035931507.png");
+        const material3 = new THREE.SpriteMaterial({ map: texture3,});
+
+        const sprite3 = new THREE.Sprite(material3);
+        sprite3.position.x = -250;
+        sprite3.position.y = 170;
+        sprite3.position.z = 20;
+        sprite3.scale.set(200,200,200);
+        scene.add(sprite3);
+
+
+
 
 
         tick();
