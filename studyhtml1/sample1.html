@@ -80,13 +80,14 @@
 
         //電光掲示板テクスチャー読み込み
         var texture3 = textureLoader.load("img1/denko1.png");
-        var mat3 = new THREE.MeshLambertMaterial({transparent: true});
+        const mat3 = new THREE.MeshLambertMaterial({transparent: true});
         mat3.map = texture3;
         //電光掲示板作成
-        var denko1 = new THREE.Mesh(geometry, mat3);
+        var geometry = new THREE.PlaneGeometry(75, 100);
+        const denko1 = new THREE.Mesh(geometry, mat3);
         denko1.position.set(100, 0, 100);
         scene.add(denko1);
-        
+
         //キャラクター
         var texture4 = textureLoader.load("img1/oen1.png");
         const material4 = new THREE.SpriteMaterial({ map: texture4,});
