@@ -89,6 +89,18 @@
         sprite3.scale.set(200,200,200);
         scene.add(sprite3);
 
+        //キャラクター
+        var texture4 = textureLoader.load("img1/istockphoto-1197813791-612x612.png");
+        const material4 = new THREE.SpriteMaterial({ map: texture4,});
+
+        const sprite4 = new THREE.Sprite(material4);
+        sprite4.position.x = -550;
+        sprite4.position.y = -200;
+        sprite4.position.z = 20;
+        sprite4.scale.set(200,200,200);
+        scene.add(sprite4);
+
+
 
 
 
