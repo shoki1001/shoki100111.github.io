@@ -43,7 +43,7 @@
         scene.add(directionalLight2);
 
          // helper
-        const gridHelper = new THREE.GridHelper(500,50); // size, step
+        const gridHelper = new THREE.GridHelper(400,50); // size, step
         scene.add(gridHelper);
 
         const axisHelper = new THREE.AxisHelper(200,50);
@@ -83,24 +83,21 @@
         Sphere.position.x = 50;
         Sphere.position.y = 100;
         Sphere.position.z = 0;
-        Sphere.scale.set(5,5,5);
+        Sphere.scale.set(15,15,15);
         scene.add(Sphere);
         
 
-        //電光掲示板作成
-        var texture3 = textureLoader.load("img1/denko2.png");
-        const material3 = new THREE.SpriteMaterial({ map: texture3,});
-        
+        //電光掲示板読み込み
+        var geometry = new THREE.PlaneGeometry(75, 100);
+        var texture3 = textureLoader.load("img1/denko1.png");
+        var mat3 = new THREE.MeshLambertMaterial({transparent: true});
+        mat3.map = texture3;
 
-        const sprite3 = new THREE.Sprite(material3);
-        sprite3.position.x = -300;
-        sprite3.position.y = 280;
-        sprite3.position.z = -20;
-        sprite3.scale.set(600,300,200);
-        scene.add(sprite3);
-
-
-        
+        // 電光掲示板を作成
+        var score = new THREE.Mesh(geometry, mat3);
+        score.position.set(0, 50, -200);
+        score.rotation.set(0,1.7,0);
+        scene.add(score);
 
         //キャラクター作成
         var texture4 = textureLoader.load("img1/oen1.png");
@@ -112,11 +109,6 @@
         sprite4.position.z = 20;
         sprite4.scale.set(500,200,200);
         scene.add(sprite4);
-
-
-
-
-
 
         tick();
         // 毎フレーム時に実行されるループイベントです
