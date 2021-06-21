@@ -89,14 +89,14 @@
 
         //電光掲示板読み込み
         var geometry = new THREE.PlaneGeometry(75, 100);
-        var texture3 = textureLoader.load("img1/denko1.png");
+        var texture3 = textureLoader.load("img1/denko2.png");
         var mat3 = new THREE.MeshLambertMaterial({transparent: true});
         mat3.map = texture3;
 
         // 電光掲示板を作成
         var score = new THREE.Mesh(geometry, mat3);
         score.position.set(0, 50, -200);
-        score.rotation.set(0,1.7,0);
+        score.rotation.set(0,-1.7,0);
         scene.add(score);
 
         //キャラクター作成
