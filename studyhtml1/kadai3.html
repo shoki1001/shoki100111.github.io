@@ -46,7 +46,8 @@
         const gridHelper = new THREE.GridHelper(200,50); // size, step
         scene.add(gridHelper);
 
-       
+        const axisHelper = new THREE.AxisHelper(200,50);
+        scene.add(axisHelper);
 
         // 投手をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
@@ -82,7 +83,7 @@
         Sphere.position.x = 50;
         Sphere.position.y = 100;
         Sphere.position.z = 0;
-        Sphere.scale.set(20,20,20);
+        Sphere.scale.set(2,2,2);
         scene.add(Sphere);
         
 
