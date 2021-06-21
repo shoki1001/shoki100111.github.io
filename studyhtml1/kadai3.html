@@ -55,6 +55,7 @@
         scene.add(sprite);
 
         //打者をスプライトで作成
+        var geometry = new THREE.PlaneGeometry(75, 100);
         var texture2 = textureLoader.load("img1/283_150.png");
         var mat2 = new THREE.MeshLambertMaterial({transparent: true});
         mat2.map = texture2;
@@ -64,7 +65,7 @@
         tree2.position.set(-100, 0, 100);
         tree2.rotation.set(0,1.7,0);
         scene.add(tree2);
-        
+
         //野球ボール作成 
         var texture = textureLoader.load("img1/watermark.png");
         var mat = new THREE.MeshPhongMaterial();
