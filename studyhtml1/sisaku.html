@@ -1,0 +1,128 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script src="OrbitControls.js"></script>
+    <script>
+      // ページの読み込みを待つ
+      window.addEventListener('load', init);
+
+      function init() {
+        // サイズを指定
+        const width = 960;
+        const height = 560;
+
+        // レンダラーを作成
+        const renderer = new THREE.WebGLRenderer({
+          canvas: document.querySelector('#myCanvas')
+        });
+        renderer.setSize(width, height);
+        // 背景の色を設定
+        renderer.setClearColor(0xFFFFFF);
+
+        // シーンを作成
+        const scene = new THREE.Scene();
+
+        // カメラを作成
+        const camera = new THREE.PerspectiveCamera(45, width / height);
+        // カメラの初期座標を設定
+        camera.position.set(0, 0, 1000);
+
+        // カメラコントローラーを作成
+        const controls = new THREE.OrbitControls(camera,document.body);
+  
+        // 平行光源1
+        var directionalLight1 = new THREE.DirectionalLight(0xffffff);
+        directionalLight1.position.set(100, 100, 100);
+        // シーンに追加
+        scene.add(directionalLight1);
+        // 平行光源2
+        var directionalLight2 = new THREE.DirectionalLight(0xffffff);
+        directionalLight2.position.set(-100, 100, 100);
+        // シーンに追加
+        scene.add(directionalLight2);
+
+        // 投手をスプライトで作成
+        var textureLoader = new THREE.TextureLoader();  
+        var texture = textureLoader.load("img1/toushu1.png");
+        const material = new THREE.SpriteMaterial({ map: texture,});
+
+        const sprite = new THREE.Sprite(material);
+        sprite.position.x = 0;
+        sprite.position.y = 0;
+        sprite.position.z = 0;
+        sprite.scale.set(150,150,150);
+        scene.add(sprite);
+
+        //打者をスプライトで作成
+        var texture2 = textureLoader.load("img1/283_150.png");
+        var mat2 = new THREE.MeshLambertMaterial({transparent: true});
+        mat2.map = texture2;
+
+        // 木2を作成(原点に作成)
+        var tree2 = new THREE.Mesh(geometry, mat2);
+        tree2.position.set(-100, 0, 100);
+        tree2.rotation.set(0,1.7,0);
+        scene.add(tree2);
+        
+        //野球ボール作成 
+        var texture = textureLoader.load("img1/watermark.png");
+        var mat = new THREE.MeshPhongMaterial();
+        mat.map = texture;
+
+        const geometry2 = new THREE.SphereGeometry(0.5, 32, 32 ); ;
+        const Sphere = new THREE.Mesh(geometry2, mat);
+        Sphere.position.x = 50;
+        Sphere.position.y = 320;
+        Sphere.position.z = 0;
+        Sphere.scale.set(20,20,20);
+        Sphere.rotateX(0.01);
+        scene.add(Sphere);
+        
+
+        //電光掲示板作成
+        var texture3 = textureLoader.load("img1/denko2.png");
+        const material3 = new THREE.SpriteMaterial({ map: texture3,});
+        
+
+        const sprite3 = new THREE.Sprite(material3);
+        sprite3.position.x = -300;
+        sprite3.position.y = 280;
+        sprite3.position.z = -20;
+        sprite3.scale.set(600,300,200);
+        scene.add(sprite3);
+
+
+        
+
+        //キャラクター作成
+        var texture4 = textureLoader.load("img1/oen1.png");
+        const material4 = new THREE.SpriteMaterial({ map: texture4,});
+
+        const sprite4 = new THREE.Sprite(material4);
+        sprite4.position.x = -300;
+        sprite4.position.y = -200;
+        sprite4.position.z = 20;
+        sprite4.scale.set(500,200,200);
+        scene.add(sprite4);
+
+
+
+
+
+
+        tick();
+        // 毎フレーム時に実行されるループイベントです
+        function tick() {
+          // レンダリング
+          renderer.render(scene, camera);
+          requestAnimationFrame(tick);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <canvas id="myCanvas"></canvas>
+  </body>
+</html>
