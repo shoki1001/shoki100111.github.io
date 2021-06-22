@@ -48,9 +48,10 @@
         var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
 
-        const geometry5 = new THREE.PlaneGeometry(5,5,5);
+        const geometry5 = new THREE.PlaneGeometry(5,5,5,5);
         const plane = new  THREE.Mesh(geometry5, mat);
         plane.position.set(0,0,0);
+        plane.rotation.set(-Math.PI/2,0,0);
         plane.scale.set(150,150,150);
         scene.add(plane);
         
