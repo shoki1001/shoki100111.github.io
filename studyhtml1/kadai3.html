@@ -49,6 +49,15 @@
         const axisHelper = new THREE.AxisHelper(200,50);
         scene.add(axisHelper);
 
+        //グラウンド作成
+        const geometry5 = new THREE.PlaneGeometry(5,5,5,5);
+        const material = new THREE.MeshBasicMaterial({color:　0xd3691e });
+        const plane = new  THREE.Mesh(geometry5, material);
+        plane.position.set(0,0,0)
+        plane.rotation.set(-Math.PI/2,0,0);
+        plane.scale.set(150,150,150);
+        scene.add(plane);
+
         // 投手をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img1/toushu1.png");
