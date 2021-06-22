@@ -60,7 +60,7 @@
 
         // 投手をスプライトで作成
         var textureLoader = new THREE.TextureLoader();  
-        var texture = textureLoader.load("img1/171_50.png");
+        var texture = textureLoader.load("img1/171_150.png");
         const material = new THREE.SpriteMaterial({ map: texture,});
 
         const sprite = new THREE.Sprite(material);
@@ -104,7 +104,7 @@
 
         // 電光掲示板を作成
         var score = new THREE.Mesh(geometry, mat3);
-        score.position.set(0, 150, -200);
+        score.position.set(0, 300, -300);
         score.rotation.set(0,0,0);
         scene.add(score);
 
