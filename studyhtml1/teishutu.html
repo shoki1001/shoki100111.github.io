@@ -43,18 +43,20 @@
         scene.add(directionalLight2);
 
         // 平面を作成
-        var planeGeometry = new THREE.PlaneGeometry(8,8,8,8);
-        var plane = new THREE.Mesh(planeGeometry,mat);
-        plane.rotation.set( -Math.PI/2, 0, 0 );
-        plane.position.set(0,0,0);
-
         var textureLoader = new THREE.TextureLoader();  
         var texture = textureLoader.load("img1/276_150.png");
-        var mat = new THREE.MeshPhongMaterial();
         mat.map = texture;
-        var bump = textureLoader.load("img1/276_150.png");
-        mat.bumpMap = bump;
-        mat.bumpscale = 0.02;
+
+        const geometry5 = new THREE.PlaneGeometry(5,20,32);
+        const plane = new  THREE.Mesh(geometry5, mat);
+        plane.position.x = 0;
+        plane.position.y = 0;
+        plane.position.z = 0;
+        plane.scale.set(150,150,150);
+        scene.add(plane);
+        
+
+
 
 
         // 投手テクスチャー読み込み
