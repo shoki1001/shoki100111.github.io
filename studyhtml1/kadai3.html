@@ -50,7 +50,7 @@
         scene.add(axisHelper);
 
         //グラウンド作成
-        const geometry5 = new THREE.PlaneGeometry(2,5,5,2);
+        const geometry5 = new THREE.PlaneGeometry(5,5,5,5);
         const material2 = new THREE.MeshBasicMaterial({color:　0xd3691e });
         const plane = new  THREE.Mesh(geometry5, material2);
         plane.position.set(0,0,0)
@@ -109,7 +109,7 @@
         scene.add(score);
 
         //フェンスを作成
-        const geometry6 = new THREE.PlaneGeometry(5,5,5,5);
+        const geometry6 = new THREE.PlaneGeometry(2,5,5,2);
         const material6 = new THREE.MeshBasicMaterial({color:　0x00000 });
         const plane1 = new  THREE.Mesh(geometry6, material6);
         plane1.position.set(-350,0,0)
