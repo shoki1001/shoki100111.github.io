@@ -104,7 +104,7 @@
 
         // 電光掲示板を作成
         var score = new THREE.Mesh(geometry, mat3);
-        score.position.set(0, 300, -300);
+        score.position.set(0, 180, -300);
         score.rotation.set(0,0,0);
         scene.add(score);
 
@@ -112,7 +112,7 @@
         const geometry6 = new THREE.PlaneGeometry(5,2,2,5);
         const material6 = new THREE.MeshBasicMaterial({color:　0x006400 });
         const plane1 = new  THREE.Mesh(geometry6, material6);
-        plane1.position.set(-360,70,0)
+        plane1.position.set(-370,70,0)
         plane1.rotation.set(0,Math.PI/2,0);
         plane1.scale.set(150,70,150);
         scene.add(plane1);
